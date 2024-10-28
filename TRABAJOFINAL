@@ -1,0 +1,54 @@
+import streamlit as st
+
+# Configuración de la página
+st.set_page_config(page_title="Mecánica - Conceptos y Ejercicios", page_icon="⚙️")
+
+# Título de la aplicación
+st.title("Mecánica - Conceptos y Ejercicios")
+
+# Introducción
+st.write("""
+Bienvenido a la aplicación de Mecánica. Aquí podrás aprender sobre conceptos básicos de mecánica y resolver problemas interactivos.
+""")
+
+# Sección de Movimiento Rectilíneo Uniforme (MRU)
+st.header("Movimiento Rectilíneo Uniforme (MRU)")
+st.write("""
+El Movimiento Rectilíneo Uniforme (MRU) se caracteriza por un desplazamiento constante en línea recta. La fórmula utilizada es:
+- \( d = vt \)
+""")
+
+# Interacción para calcular distancia
+v_mru = st.number_input("Introduce la velocidad (m/s):", value=10)
+t_mru = st.number_input("Introduce el tiempo (s):", value=5)
+
+if st.button("Calcular Distancia (MRU)"):
+    distancia = v_mru * t_mru
+    st.success(f"La distancia recorrida es: {distancia} m")
+
+# Sección de Leyes de Newton
+st.header("Leyes de Newton")
+st.write("""
+Las leyes de Newton describen el comportamiento del movimiento y están divididas en tres:
+1. **Primera Ley**: Todo cuerpo en reposo permanecerá en reposo y todo cuerpo en movimiento permanecerá en movimiento a menos que actúe sobre él una fuerza externa.
+2. **Segunda Ley**: La aceleración de un objeto es directamente proporcional a la fuerza neta que actúa sobre él e inversamente proporcional a su masa. Se expresa como:
+- \( F = ma \)
+3. **Tercera Ley**: Para cada acción hay una reacción igual y opuesta.
+""")
+
+# Interacción para calcular fuerza
+masa = st.number_input("Introduce la masa (kg):", value=1)
+aceleracion = st.number_input("Introduce la aceleración (m/s²):", value=9.81)
+
+if st.button("Calcular Fuerza"):
+    fuerza = masa * aceleracion
+    st.success(f"La fuerza aplicada es: {fuerza} N")
+
+# Sección de gráficos (opcional)
+st.header("Gráficos")
+st.write("Aquí podrías incluir gráficos de movimiento.")
+
+# Conclusión
+st.write("""
+Esperamos que esta aplicación te haya ayudado a comprender mejor los conceptos de mecánica. ¡Continúa explorando y aprendiendo!
+""")
